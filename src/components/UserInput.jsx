@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { calculateInvestmentResults, formatter } from "../util/investment.js"
 
-export default function InputGroup () {
+export default function UserInput () {
     const [initialInvestment, setInitialInvestment] = useState('');
     const [annualInvestment, setAnnualInvestment] = useState('');
     const [expectedInvestment, setExpectedInvestment] = useState('');
@@ -33,26 +33,28 @@ export default function InputGroup () {
 
     return (
         <>
-            <div id="user-input">
-                <form id="input-group" action="">
-                    <div>
+            <section id="user-input" action="">
+                <div className="input-group">
+                    <p>
                         <label id="user-input label" htmlFor="">INITIAL  INVESTMENT</label>
                         <input value={initialInvestment} onChange={handleInitialInvestment} id="user-input input" type="number" />
-                    </div>
-                    <div>
+                    </p>
+                    <p>
                         <label id="user-input label" htmlFor="">ANNUAL INVESTMENT</label>
                         <input value={annualInvestment} onChange={handleAnnualInvestment} id="user-input input" type="number" />
-                    </div>
-                    <div>
+                    </p>
+                </div>
+                <div className="input-group">
+                    <p>
                         <label id="user-input label" htmlFor="">EXPECTED RETURN</label>
                         <input value={expectedInvestment} onChange={handleExpectedInvestment} id="user-input input" type="number" />
-                    </div>
-                    <div>
+                    </p>
+                    <p>
                         <label id="user-input label" htmlFor="">DURATION</label>
                         <input value={duration} onChange={handleDuration} id="user-input input" type="number" />
-                    </div>
-                </form>
-            </div>
+                    </p>
+                </div>
+            </section>
             <table id="result">
                 <thead id="result thead">
                     <tr>
